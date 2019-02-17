@@ -1,0 +1,13 @@
+fieldset {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    background-color: lighten($base-color-background, 1%);
+    padding: 5px;
+    margin: 5px;
+    legend {
+        font-family: $brand-font-stack-body-bold;
+        padding: 2px;
+        margin-left: 10px;
+
+    }
+}

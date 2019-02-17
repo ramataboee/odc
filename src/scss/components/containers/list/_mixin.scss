@@ -1,0 +1,82 @@
+@mixin col($col, $sum, $gap: 1em, $align: top) {
+  width: 100%;
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+
+  @media only screen and (min-width: 768px) {
+    width: percentage($col/$sum);
+    vertical-align: $align;
+  }
+}
+
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow + 3) * $margin)) / $numPerRow);
+  &:nth-child(n) {
+    margin-bottom: $margin;
+    margin-right: $margin;
+  }
+  /*&:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }*/
+}
+
+@mixin odc-mx-create-list(){
+  .odc-list{
+    padding:0;
+    margin:0;
+    list-style: none;
+    .odc-list_item{
+      @extend .odc-card;
+      margin:0;
+      padding: 0;
+      overflow: auto;
+      //margin: 2%;
+      .odc-list_item-image{
+        img{
+          max-width:100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    &.grid{
+      .odc-list_item{
+        display: inline-block;
+        .odc-list_item-image{
+          img{
+            width:100%;
+          }
+        }
+      }
+    }
+   @each $row in 2, 3, 4, 5, 6, 7, 8, 9 {
+      &.odc-grid-#{$row} {
+        .odc-list_item{
+          @include rowMachine($row,2%);
+        }
+      }
+    }
+    &.linear{
+      .odc-list_item{
+         margin: 2%;
+         padding: 2%;
+         display: block;
+        .odc-list_item-image{
+          width: 15%;
+          display:inline-block;
+          float:left;
+        }
+        .odc-list_item-content{
+          width: 80%;
+          display:inline-block;
+          float:left;
+          padding-left: 2%;
+        }
+      }
+    }
+  }
+}

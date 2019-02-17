@@ -1,0 +1,9 @@
+label{
+  @extend %label;
+  display: inline-block;
+  padding: 6px 0;
+}
+
+.labeloptional{
+  @extend %label;
+}

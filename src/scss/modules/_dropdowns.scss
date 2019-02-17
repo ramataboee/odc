@@ -1,0 +1,127 @@
+.select-style{
+    width: 85px;
+    overflow: hidden;
+    margin-right: 5px;
+    background: #fff;
+    border-radius: 2px;
+  select{
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    text-align-last: center;
+    font-size: 10px;
+    font-family: $brand-font-stack-body;
+    border-radius: 1px;
+    border: 1px solid #eee;
+  }
+}
+
+.udropdown{
+  display: none;
+  list-style: none;
+  width: 350px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+  margin: 10px 0 0 0;
+  padding: 0;
+  border-radius: 2px;
+  box-shadow: 0 29px 26px -26px rgba(67,67,67,.46), 0 0 1px 0 rgba(0, 0, 0, 0.22);
+
+  li{
+    display:block;
+    a{
+      padding: 15px 0 15px 24px;
+      display: block;
+      transition: all ease-in-out 0.3s;
+      font-size: 15px;
+      line-height: 17px;
+      font-family: $brand-font-stack-body;
+      color: $brand-color-tertiary;
+
+      &:hover{
+            background-color: $brand-color-primary;
+            color: #fff;
+      }
+    }
+  }
+  &:before {
+      content: "";
+      width: 100%;
+      bottom: 100%;
+      left: 0;
+      height: 10px;
+      position: absolute;
+  }
+  &:after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 10px;
+      border-bottom: 8px solid #fff;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+    }
+
+  .profile-summary {
+    padding: 0;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    .profile-header {
+          background-color: #f9f9f9;
+          border-bottom: 1px solid #eee;
+      }
+    .fa-user-circle {
+      font-size: 40px;
+      padding:10px;
+    }
+    .profile-summary-content {
+        padding: 5px 10px;
+        //margin-top: 10px;
+        ul{
+          li {
+              color: #9b9797;
+              padding: 5px 0;
+          }
+        }
+    }
+  }
+
+  .profile-options {
+      width: 49.7%;
+      display: inline-block;
+      border-bottom: 1px solid #eee;
+      border-right: 1px solid #ddd;
+      background-color: #f0f0f0;
+      }
+
+}
+.udropdown.switch-app{
+  width: 230px;
+}
+.dddisabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+img.images {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+
+
+
+
+div[id$="_SPAN"].load {
+    background: rgb(249, 249, 249) url(/i/act_template/images/loading_new.gif) no-repeat scroll 50% 50% !important;
+    position: relative;
+    z-index: 999999;
+    opacity: 1;
+    background: #ffffff none repeat scroll 0 0;
+}

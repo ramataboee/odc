@@ -1,0 +1,47 @@
+@import './functions';
+
+/**
+ * ACK: https://css-tricks.com/snippets/css/fluid-typography/
+ **/
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+/**
+ * convert font size to rem units
+ **/
+@mixin font-size($sizeValue: 12 ){
+	font-size: $sizeValue + px; //fallback for old browsers
+	font-size: (0.0625 * $sizeValue) + rem;
+
+}
+
+/**
+ * Uses the golden ratio for line-height converted to rem
+ **/
+@mixin line-height($sizeValue: 12 ){
+    line-height: gr-line-height($sizeValue) + px; //fallback for old browsers
+    line-height: gr-line-height(0.0625 * $sizeValue) + rem;
+    //line-height: gr-line-height((0.125 * $sizeValue)) + em;
+}
+
+@mixin font-rhythm($sizeValue: 12,$fontFamily:arial) {
+	@include font-size($sizeValue);
+	@include line-height($sizeValue);
+  font-family: $fontFamily;
+}

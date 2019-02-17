@@ -1,0 +1,13 @@
+@import 'mixin';
+
+.v1.odc-toggle_switch-wrapper{
+  @include odc-mx-create-toggle_switch($hasBackgroud: "true", $channel: "false", $color: #4c6);
+}
+
+.v2.odc-toggle_switch-wrapper{
+  @include odc-mx-create-toggle_switch($hasBackgroud: "false", $channel: "true", $color: #c03);
+}
+
+.v3.odc-toggle_switch-wrapper{
+  @include odc-mx-create-toggle_switch($hasBackgroud: "true", $channel: "true", $color: $odc-button_color-primary);
+}

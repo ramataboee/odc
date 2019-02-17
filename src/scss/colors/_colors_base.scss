@@ -1,0 +1,13 @@
+/*
+ * Application base colors: default for all applications unless specified in brand colors
+ *
+ * Use: http://chir.ag/projects/name-that-color/#6195ED
+ * to determine color variables that are meaningful
+ */
+ @import 'colors_brand';
+ @import 'variables';
+
+$white: #ffffff;
+$black: '#000000';
+$wild-sand: '#f5f5f5';
+$gallery: #f0f0f0;

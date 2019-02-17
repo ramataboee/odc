@@ -1,0 +1,93 @@
+@mixin odc-mx-select-list($tickColor: #000,$size: 16,$open-icon: $fa-var-chevron-down,$close-icon: $fa-var-chevron-down ,$shape: rounded,$border: 1){
+  cursor: pointer;
+  @include font-rhythm($size,$ns-body-text);
+  padding: 20px 10px 5px;
+  position: relative;
+  margin: 5%;
+  @include box-shadow(0);
+  height: $size+10px;
+  &:before{
+    @extend %fa-icon;
+    @extend .fas;
+    content: fa-content($open-icon);
+    right: 4%;
+    position:absolute;
+  }
+  @if $shape == "rounded" {
+    border-radius: $odc-select-list_radius;
+  } @else if $shape == "circle" {
+    border-radius: 50px;  
+
+  } @else {
+    border-radius: 0;
+  }
+
+  @if $border == 1 {
+     border: $odc-select-list_border;
+  } @else {
+     border: 0;
+     background-color: lighten($tickColor,90%);
+  }
+
+  ul.odc-select-list_decoy {
+    position: absolute;
+    left: -1px;
+    top: $size*3+px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 1;
+    list-style: none;
+    @include box-shadow(2);
+    border: 1px solid #b6babd;
+
+    @if $shape == "rounded" {
+      border-radius: $odc-select-list_radius;
+    } @else if $shape == "circle" {
+      border-radius: 0 0 25px 25px;
+    } @else {
+      border-radius: 0;
+    }
+    /*@if $border == 1 {
+       border: $odc-select-list_border;
+    } @else {
+       border: 0;
+       background-color: lighten($tickColor,50%);
+    }*/
+    .odc-select-list_option{
+      padding: 2px 8px;
+      &:hover{
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  .odc-select-list_label{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 5px;
+    //top: 15px;
+    color: #ccc;
+    //@include font-rhythm(14,$ns-body-text);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+
+  }
+  .odc-select-list_label.odc-select-list_label--selected{
+    @include font-rhythm(12,$ns-body-heading);
+    top:0;
+    left:2px;
+    color: $tickColor;
+
+  }
+
+  /*.odc-select-list_icon{
+    position: absolute;
+    right: 2px;
+    z-index: 0;
+
+  }*/
+}

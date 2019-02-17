@@ -1,0 +1,60 @@
+@mixin odc-mx-radio-button($radioColor: #000,$size: 16,$shape: rounded,$border: 1,$invert: 0){
+  cursor: pointer;
+  .odc-radio-button{
+    display: none;
+
+    + .odc-radio-button_icon{
+      transition: 0.2s ease-in-out;
+      position: relative;
+  		display: inline-block;
+  		top: -1px;
+  		width: #{$size}px;
+  		height: #{$size}px;
+  		margin: 5px;
+      padding: 2px;
+      font-size: #{$size}px;
+      @extend %fa-icon;
+      @extend .fas;
+      @include box-shadow(0);
+
+      @if $shape == "rounded" {
+        border-radius: $odc-radio-button_radius;
+        &:after {
+          content: fa-content($fa-var-square);
+          opacity: 0;
+        }
+      } @else if $shape == "circle" {
+        border-radius: 50%;
+        &:after {
+          content: fa-content($fa-var-circle);
+          opacity: 0;
+        }
+      } @else {
+        border-radius: 0;
+        &:after {
+          content: fa-content($fa-var-square-full);
+          opacity: 0;
+        }
+      }
+
+      @if $border == 1 {
+         border: $odc-radio-button_border;
+      } @else {
+         border: 0;
+         background-color: lighten($radioColor,40%);
+      }
+    }
+
+    &:checked + .odc-radio-button_icon{
+      color: $radioColor;
+      &:after{
+        opacity: 1;
+      }
+    }
+  }
+
+  .odc-radio-button_label{
+    display: inline-block;
+    @include font-rhythm(14,$ns-body-text);
+  }
+}

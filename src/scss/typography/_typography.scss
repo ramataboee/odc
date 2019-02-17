@@ -1,0 +1,20 @@
+@import './mixin';
+@import './fontFace';
+@import './variables';
+
+html {
+  @include fluid-type($ns-min_width, $ns-max_width, $ns-min_font-size, $ns-max_font-size);
+}
+body{
+  @include font-rhythm(12,$odc-font-body);
+  margin: 0;
+}
+h1{
+  @include font-rhythm(24,$ns-headline);
+}
+h2{
+  @include font-rhythm(16,$ns-sub-headline);
+}
+p{
+  @include font-rhythm(12,$ns-body-text);
+}

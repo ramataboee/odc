@@ -1,0 +1,29 @@
+/**
+ * Shadow length = object height/tan(a)
+ * where a = sun angle.
+ * In this case sun's angle in at 12noon.
+ **/
+@mixin box-shadow(){
+
+}
+
+
+/**
+ * Gives a card depth effect.
+ *
+ * @param {Number} $depth - depth level (between 1 and 5)
+ *
+ * @link https://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+ *
+ * @requires {function} top-shadow
+ * @requires {function} bottom-shadow
+ */
+@mixin card-elevation($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 6 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth);
+  }
+}

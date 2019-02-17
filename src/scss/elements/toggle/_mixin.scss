@@ -1,0 +1,95 @@
+@mixin odc-mx-create-toggle_switch($hasBackgroud: "true", $channel: "false", $color: #4c6){
+  .odc-toggle_switch-input{
+    position:absolute;
+    z-index:-9999;
+  }
+  .odc-toggle_switch{
+    position: relative;
+    display: block;
+    width: 5.5em;
+    height: 3em;
+    cursor: pointer;
+    border-radius: 1.5em;
+    transition: 350ms;
+
+    @if $hasBackgroud == "true" {
+      background: linear-gradient(rgba(#000,0.07),rgba(#fff,0)),#ddd;
+      box-shadow:
+        0 0.07em 0.1em -0.1em rgba(#000,.4) inset,
+        0 0.05em 0.08em -0.01em rgba(#fff,.7);
+    }
+
+    @if $channel == "true" {
+      &:after{
+        position: absolute;
+        content:'';
+        width: 2em; height: 2em;
+        top: 0.5em; left: 0.5em;
+        border-radius: 50%;
+        transition: 250ms ease-in-out;
+        background: linear-gradient(#f5f5f5 10%,#eee);
+        box-shadow:
+          0 0.1em 0.15em -0.05em rgba(#fff,.9
+          ) inset,
+          0 0.2em 0.2em -0.12em rgba(#000,.5);
+      }
+      &:before{
+        position: absolute;
+        content:'';
+        width: 4em; height: 1.5em;
+        top: 0.75em; left: 0.75em;
+        border-radius: 0.75em;
+        transition: 250ms ease-in-out;
+        background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#d0d0d0;
+        box-shadow:
+          0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+          0 0.05em 0.08em -0.01em rgba(#fff,.7),
+          0 0 0 0 rgba($color,.7) inset;
+      }
+    } @else {
+      &:before{
+        position: absolute;
+        content: '';
+        width: 2em; height: 2em;
+        top: 0.5em; left: 0.5em;
+        border-radius: 50%;
+        transition: 250ms ease-in-out;
+        background: linear-gradient(#f5f5f5 10%,#eee);
+        box-shadow:
+          0 0.1em 0.15em -0.05em rgba(#fff,.9
+          ) inset,
+          0 0.5em 0.3em -0.1em rgba(#000,.25);
+      }
+    }
+
+  }
+
+  @if $channel == "true" {
+    input:checked + .odc-toggle_switch{
+      &:before {
+        box-shadow:
+          0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+          0 0.05em 0.08em -0.01em rgba(#fff,.7),
+          3em 0 0 0 rgba($color,.7) inset;
+      }
+      &:after {
+      	left: 3em;
+      }
+    }
+  } @else {
+    input:checked + .odc-toggle_switch{
+      background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),$color;
+      /*&:after{
+        //background: linear-gradient(rgba(#000,0.07),rgba(#fff,0.1)),#4c6;
+        box-shadow:
+          0 0.08em 0.15em -0.1em rgba(#000,.5) inset,
+          0 0.05em 0.08em -0.01em rgba(#fff,.7),
+          -7.25em 0 0 -0.25em rgba(#000,.12);
+      }*/
+      &:before {
+      	left: 3em;
+      }
+
+    }
+  }
+}

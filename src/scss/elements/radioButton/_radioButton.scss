@@ -1,0 +1,11 @@
+@import 'mixin';
+
+$odc-radio-button_radius: 3px;
+$odc-radio-button_border: 2px solid $limed-spruce;
+
+.odc-radio-button_container{
+  @include odc-mx-radio-button($radioColor: #000,$size: 16,$shape: circle,$border: 1,$invert: 0);
+}
+.odc-radio-button_container.rounded{
+  @include odc-mx-radio-button($radioColor: #00B0EE,$size: 12,$shape: rounded,$border: 1,$invert: 1);
+}

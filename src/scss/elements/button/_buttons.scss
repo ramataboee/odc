@@ -1,0 +1,125 @@
+@import './mixin';
+
+//touch size
+
+/*
+Any on-screen element that someone can click, touch, or otherwise interact with should be large enough for reliable interaction.
+Consider making sure these elements have a width and height of at least 48dp
+*/
+$odc-touch-target_width: 48px;
+$odc-touch-target_height: 48px;
+//general
+$odc-button_width: 130px;
+$odc-button_padding: 2%;
+$odc-button_border-radius: 3px;
+$odc-button_font-size: 14;
+$odc-button_transition: all .1s linear;
+$odc-button--darken-percent: 5%;
+$odc-button--lighten-percent: 5%;
+
+//colors
+$odc-button_color-primary: $cerulean-approx;
+$odc-button_color-secondary: $white;
+$odc-button_text-color--secondary: $black;
+$odc-button_text-color--primary: $white;
+
+// button config
+
+button{
+  border: none;
+}
+%odc-button{
+  @include font-rhythm($odc-button_font-size,$ns-body-text);
+  @include border-radius($odc-button_border-radius);
+  @include box-shadow(1);
+  padding: $odc-button_padding;
+  transition: $odc-button_transition;
+  position: relative;
+  margin: 2%;
+  cursor: pointer;
+  outline: none;
+  min-height: $odc-touch-target_width;
+  min-width: $odc-button_width;
+
+  .odc-button_head--horizontal{
+    width: gr-two-col-width-2($odc-button-width);
+    display: inline-block;
+  }
+
+  .odc-button_body--horizontal{
+    width: gr-two-col-width-1($odc-button-width);
+    display: inline-block;
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &:hover{
+    @include box-shadow(3);
+  }
+
+  &:active{
+    @include box-shadow(1);
+  }
+
+  &:active{
+    &:after{
+      background-color: darken($white,$odc-button--lighten-percent);
+      opacity: 0.5;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+    }
+  }
+
+}
+
+.odc-button{
+  @extend %odc-button;
+}
+
+//usage
+
+.odc-button_primary{
+  @extend %odc-button;
+  @include odc-mx-button-rythm($odc-button_text-color--primary,$odc-button_color-primary,none);
+  //min-width: $odc-button_width;
+  height: $odc-touch-target_height;
+}
+
+.odc-button_secondary{
+  @extend %odc-button;
+  @include odc-mx-button-rythm($odc-button_text-color--secondary,$odc-button-color_secondary,1px solid $black);
+  //min-width: $odc-button_width;
+  height: $odc-touch-target_height;
+}
+
+.odc-button--icon{
+  @extend %odc-button;
+  @include odc-mx-button-rythm($odc-button_text-color--primary,$odc-button_color-primary,none);
+  @include odc-mx-button-icon($fa-var-user);
+  //min-width: $odc-button_width;
+  //height: $odc-touch-target_height;
+}
+
+.odc-button_round{
+  @extend %odc-button;
+  @include odc-mx-button-rythm($odc-button_text-color--primary,$odc-button_color-primary,none);
+  @include odc-mx-button-icon($fa-var-car);
+  @include border-radius(50%);
+  min-width: $odc-touch-target_width;
+  width: $odc-touch-target_width;
+  height: $odc-touch-target_height;
+
+  &:active{
+      &:after{
+        @include border-radius(50%);
+      }
+  }
+  //padding: 4%;
+
+}
