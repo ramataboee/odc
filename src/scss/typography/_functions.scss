@@ -1,0 +1,17 @@
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/**
+ * Golden Ratio (Phi) : formula (a/b) = (a+b)/a => 1:1.618
+ *
+ * In mathematics, two quantities are in the golden ratio if their ratio is the same as
+ * the ratio of their sum to the larger of the two quantities. Closely related to the Fibonacci Sequence,
+ * the Golden Ratio describes the perfectly symmetrical relationship between two proportions
+ *
+ * Theory behind the golden ratio: https://en.wikipedia.org/wiki/Golden_ratio
+ *
+ **/
+@function gr-line-height($fontSize){
+  @return ($fontSize*1.618);
+}

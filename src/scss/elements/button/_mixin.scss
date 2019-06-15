@@ -1,0 +1,27 @@
+@mixin odc-mx-button-rythm($text-color: #ffffff, $bg-color: #000, $border: 1px solid #ccc) {
+  color: $text-color;
+  background-color: $bg-color;
+  border: $border;
+
+  &:disabled, &.disabled {
+      color: lighten(#fff, $odc-button--lighten-percent);
+      background-color: lighten($bg-color,$odc-button--lighten-percent);
+  }
+
+  &:active{
+    &:after{
+      background-color: darken($bg-color,$odc-button--darken-percent);
+    }
+  }
+}
+
+@mixin odc-mx-button-icon($icon: $fa-var-user){
+  .odc-button_icon{
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($icon);
+    }
+  }
+}

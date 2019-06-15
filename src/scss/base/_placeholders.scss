@@ -1,0 +1,82 @@
+/**
+ * This file contains sass placeholders.
+ * Usable witht the @extend feature of sass.
+ * These placeholder are global ad meant to be reusable by other components/elements
+ **/
+
+
+/**
+ * ELEMENTS
+ **/
+
+
+/*
+ * Input Elements: text fields and select lists
+ */
+ %input-elements{
+   border: 1px solid #e6e6e6;
+   border-radius: 3px;
+   background-color: #f7f7f7;
+   padding: 6px;
+   box-sizing: border-box;
+   text-align:center;
+   //font-family: $brand-font-stack-body;
+ }
+
+ %select-list{
+   box-shadow: 0 29px 26px -26px rgba(67,67,67,.46), 0 0 1px 0 rgba(0,0,0,.29);
+   background-color: #fff;
+   border-radius: 2px;
+   margin-top: 4px;
+   z-index: 10;
+   li{
+     font-size: 11px;
+     //font-family: $brand-font-stack-body;
+     color: #000;
+     line-height: 25px;
+     cursor: pointer;
+     border-bottom: 1px solid rgba(0,0,0,.02);
+     &:hover{
+       background-color: #f7f7f7;
+     }
+   }
+ }
+
+/*
+ * Label
+ */
+ %label{
+   //font-family: $brand-font-stack-body-bold;
+   font-size: 11px;
+   line-height: 16px;
+   color: #333;
+ }
+
+ /*
+  * Field container for elements in form fields
+  */
+  %field-container{
+    margin: 2px;
+    overflow: auto;
+  }
+
+/*
+ * Font Icons
+ */
+ %icons{
+   font-family: 'fontAwesome';
+   color: rgba(0,0,0,.65);
+ }
+
+ /**
+  * COMPONENTS
+  **/
+
+%card{
+    box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+    border-radius: 3px;
+    transition: all .3s ease;
+    &:hover{
+      box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+    }
+  }

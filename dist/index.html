@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/odc.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <style>
+      .odc-container{
+        /*width: 60%;*/
+        margin: 5% auto;
+        display: block;
+      }
+      .inline{
+        display: inline-block;
+        float: left;
+      }
+      .overflow {
+          position: absolute;
+          bottom: 5%;
+          right: 5%;
+      }
+      .odc-card_edged{
+        position: relative;
+      }
+      .keep-contained{
+        overflow: auto;
+      }
+      .odc-loader-wrapper{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="odc-menu">
+          <li><a href=#>Dashboard</a></li>
+          <li>Satisfaction
+              <ul>
+                <li><a href=#>Monthly trends</a></li>
+                <li><a href=#>YoY Summary</a></li>
+              </ul>
+          </li>
+          <li>Market Share
+            <ul>
+              <li><a href=#>Monthly trends</a></li>
+              <li><a href=#>Market Share Details</a></li>
+              <li><a href=#>Retention Details</a></li>
+              <li><a href=#>Service Effectiveness Details</a></li>
+              <li><a href=#>Cross Service Details</a></li>
+            </ul>
+          </li>
+          <li><a href=#>Service Leads</a></li>
+          <li><a href=#>Profit  Tracking</a></li>
+          <li><a href=#>Performance</a></li>
+          <li><a href=#>Program</a></li>
+      </ul>
+
+        <h1>Hello world!</h1>
+        <h2>Hello world!</h2>
+        <p> Hello world! This is a paragraph.</p>
+
+      <div class="odc-container odc-medium">
+        <h2>BUTTONS</h2>
+        <button class="odc-button_primary"> Primary</button>
+        <button class="odc-button--icon"><div class="odc-button_icon"></div><div class="odc-button_body--horizontal">With Icon</div></button>
+        <button class="odc-button_secondary"> Secondary</button>
+        <button class="odc-button"> Default</button>
+        <button class="odc-button_round"><div class="odc-button_icon"></div></button>
+      </div>
+      <div class="odc-container odc-medium odc-card keep-contained">
+        <h2>TOGGLE</h2>
+        <div class="odc-toggle_switch-wrapper v1 inline">
+          <input type="checkbox" class="odc-toggle_switch-input" id="s3" />
+          <label class="odc-toggle_switch" for="s3"></label>
+        </div>
+        <div class="odc-toggle_switch-wrapper v2 inline">
+          <input type="checkbox" class="odc-toggle_switch-input" id="s4" />
+          <label class="odc-toggle_switch" for="s4"></label>
+        </div>
+        <div class="odc-toggle_switch-wrapper v3 inline">
+          <input type="checkbox" class="odc-toggle_switch-input" id="s5" />
+          <label class="odc-toggle_switch" for="s5"></label>
+        </div>
+      </div>
+
+
+      <div class="odc-container odc-card odc-medium">
+        <h2>CHECKBOX</h2>
+      <label for="check1" class="odc-checkbox_container">
+        <input type="checkbox" id="check1" class="odc-checkbox">
+        <div class="odc-checkbox_icon"></div>
+        <div class="odc-checkbox_label">Hello world!</div>
+      </label>
+      <label for="check2" class="au odc-checkbox_container">
+        <input type="checkbox" id="check2" class="odc-checkbox">
+        <div class="odc-checkbox_icon"></div>
+        <div class="odc-checkbox_label">Hello Different</div>
+      </label>
+      <label for="check3" class="nilesh odc-checkbox_container">
+        <input type="checkbox" id="check3" class="odc-checkbox">
+        <div class="odc-checkbox_icon"></div>
+      </label>
+      <label for="check4" class="dft odc-checkbox_container">
+        <input type="checkbox" id="check4" class="odc-checkbox">
+        <div class="odc-checkbox_icon"></div>
+        <div class="odc-checkbox_label">Hello Different</div>
+      </label>
+
+   </div>
+
+   <div class="odc-container odc-medium">
+       <h2>FORM</h2>
+      <div class="keep-contained odc-card">
+        <div class="odc-medium inline">
+          <div class="odc-floating-labels_wrapper">
+                <input id="dname" name="dname" type="text" class="odc-floating-labels_input" required>
+                <label for="dname" class="odc-floating-labels_label">Dealer Name</label>
+                <div class="odc-text-field-helper">No special characters allowed</div>
+          </div>
+        </div>
+        <div class="odc-medium inline">
+          <div class="odc-floating-labels_wrapper">
+                <input id="dcode" name="dcode" type="text" class="odc-floating-labels_input" required>
+                <label for="dcode" class="odc-floating-labels_label">Dealer Code</label>
+                <div class="odc-text-field-helper">No special characters allowed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="odc-card odc-container odc-medium">
+      <h2>RADIO BUTTONS</h2>
+      <div class="odc-full">
+        <label for="radio1" class="odc-radio-button_container">
+          <input type="radio" name="odc" id="radio1" class="odc-radio-button">
+          <div class="odc-radio-button_icon"></div>
+          <div class="odc-radio-button_label">Male</div>
+        </label>
+        <label for="radio2" class="odc-radio-button_container">
+          <input type="radio" name="odc" id="radio2" class="odc-radio-button">
+          <div class="odc-radio-button_icon"></div>
+          <div class="odc-radio-button_label">Female</div>
+        </label>
+        <label for="radio3" class="odc-radio-button_container">
+          <input type="radio" name="odc" id="radio3" class="odc-radio-button">
+          <div class="odc-radio-button_icon"></div>
+          <div class="odc-radio-button_label">Other</div>
+        </label>
+      </div>
+      <div class="odc-full">
+        <label for="radio1r" class="odc-radio-button_container rounded">
+          <input type="radio" name="odcr" id="radio1r" class="odc-radio-button">
+          <div class="odc-radio-button_icon"></div>
+          <div class="odc-radio-button_label">Male</div>
+        </label>
+        <label for="radio2r" class="odc-radio-button_container rounded">
+          <input type="radio" name="odcr" id="radio2r" class="odc-radio-button">
+          <div class="odc-radio-button_icon"></div>
+          <div class="odc-radio-button_label">Female</div>
+        </label>
+        <label for="radio3r" class="odc-radio-button_container rounded">
+          <input type="radio" name="odcr" id="radio3r" class="odc-radio-button">
+          <div class="odc-radio-button_icon"></div>
+          <div class="odc-radio-button_label">Other</div>
+        </label>
+      </div>
+    </div>
+
+
+    <div class="odc-container odc-card odc-medium">
+        <h2>SELECT LIST</h2>
+      <select rel="Select List" class="odc-select-list">
+
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+      </select>
+
+      <select rel="Fruits" class="odc-select-list">
+
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Cherry</option>
+        <option>Dates</option>
+      </select>
+
+      <select rel="Wild Cats" class="odc-select-list">
+
+        <option>Lion</option>
+        <option>Leopard</option>
+        <option>Cheetah</option>
+        <option>Tiger</option>
+      </select>
+
+   </div>
+
+
+   <div class="odc-container odc-medium">
+     <h2>TEXT FIELD</h2>
+         <div class="three">
+           <div class="odc-floating-labels_wrapper">
+                 <input id="name" name="name" type="text" class="odc-floating-labels_input" required>
+                 <label for="name" class="odc-floating-labels_label">Dealer Name</label>
+                 <div class="odc-text-field-helper">No special characters allowed</div>
+              </div>
+
+           <div class="odc-floating-labels_wrapper">
+                        <input id="sname" name="name" type="text" class="odc-floating-labels_input" required>
+                        <label for="sname" class="odc-floating-labels_label">Your Name</label>
+                     </div>
+                     <div class="odc-text-input">
+                       <input class="effect-24" type="text" placeholder="" id="l1">
+                         <label for="l1">First Name</label>
+                         <span class="focus-bg"></span>
+                     </div>
+                     <div class="odc-text-input l5">
+                       <input class="effect-22" type="text" placeholder="" id="l5">
+                         <label for="l5">Border Radius</label>
+                         <span class="focus-bg"></span>
+                     </div>
+                     <div class="odc-text-input">
+                       <input class="effect-22" type="text" placeholder="" id="l0">
+                         <label for="l0">First Name</label>
+                         <span class="focus-bg"></span>
+                     </div>
+                     <div class="odc-text-input">
+                      	<input class="effect-16" type="text" placeholder="" id="l2">
+                          <label for="l2">First Name</label>
+                          <span class="focus-border"></span>
+                      </div>
+                      <div class="odc-text-input">
+                      	<input class="effect-20" type="text" placeholder="" id="l3" value="cement">
+                          <label for="l3">First Name</label>
+                          <span class="focus-border">
+                          	<i></i>
+                          </span>
+                      </div>
+                      <div class="odc-text-input">
+                      	<input class="effect-20" type="password" placeholder="" id="l4" >
+                          <label for="l4">Password</label>
+                          <span class="focus-border">
+                          	<i></i>
+                          </span>
+                      </div>
+                      <div class="odc-text-input">
+                        <input class="effect-20" type="number" placeholder="" id="l6" >
+                          <label for="l6">Number</label>
+                          <span class="focus-border">
+                            <i></i>
+                          </span>
+                      </div>
+                      <div class="odc-text-input">
+                        <input class="effect-20" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="" id="l7" >
+                          <label for="l7">Phone</label>
+                          <span class="focus-border">
+                            <i></i>
+                          </span>
+                      </div>
+
+         </div>
+
+      </div>
+
+
+      <h1>CARDS</h1>
+      <div class="odc-container odc-large keep-contained">
+        <div class="odc-small inline">
+          <div class="one odc-space_margin-all--m">
+              <p>Hello World!</p>
+              <p>Hello World!</p>
+          </div>
+          <div class="odc-card odc-space_margin-all--m">
+              <p>Hello World!</p>
+              <p>Hello World!</p>
+          </div>
+          <div class="odc-card odc-space_margin-all--m">
+            <div class="odc-card_image"></div>
+            <div class="odc-card_body">
+              <p>Hello World!</p>
+              <p>Hello World!</p>
+            </div>
+          </div>
+        </div>
+        <div class="odc-medium inline">
+          <div class="odc-card_edged">
+            <div class="odc-card_image">
+              <img src="images/card-image.jpg">
+            </div>
+            <div class="odc-card_body">
+              <p>Hello World!</p>
+              <p>Body</p>
+            </div>
+            <div class="odc-card_foot">
+                Footer
+            </div>
+          </div>
+          <div class="odc-card_edged">
+            <div class="odc-card_image">
+              <img src="images/card-image.jpg">
+            </div>
+            <button class="odc-button_round overflow"><div class="odc-button_icon"></div></button>
+          </div>
+        </div>
+        <div class="odc-small inline odc-space_margin-all--xs">
+          <div class="odc-card">
+            <div class="odc-card_head"><h1>Header</h1></div>
+            <div class="odc-card_body">
+              <p>Hello World!</p>
+              <p>Body</p>
+            </div>
+            <div class="odc-card_foot">
+                Footer
+            </div>
+          </div>
+          <div class="odc-card">
+            <div class="odc-card_image">
+              <img src="images/card-image.jpg">
+            </div>
+            <div class="odc-card_body">
+              <p>Hello World!</p>
+              <p>Body</p>
+            </div>
+            <div class="odc-card_foot">
+                Footer
+            </div>
+          </div>
+        </div>
+   </div>
+   <div class="odc-container">
+     <div class="odc-loader-wrapper">
+         <div class="odc-loader"></div>
+     </div>
+   </div>
+
+   <div class="odc-container odc-medium">
+     <h2>TOASTS</h2>
+     <button class="odc-button_primary" id="topleftToast"> Top Left Toast</button>
+     <button class="odc-button_primary" id="toprightToast"> Top Right Toast</button>
+     <button class="odc-button_primary" id="centerToast"> Center Toast</button>
+     <button class="odc-button_primary" id="bottomleftToast"> Bottom Left Toast</button>
+     <button class="odc-button_primary" id="bottomrightToast"> Bottom Right Toast</button>
+   </div>
+   <div class="odc-container odc-medium">
+     <h2>TOOLTIP</h2>
+     <span> Hover</span>
+   </div>
+
+   <div class="odc-container odc-medium">
+      <h2>TABLE</h2>
+      <div class="odc-table_wrapper">
+        <table class="odc-table">
+          <thead>
+            <tr>
+              <th>Head 1</th>
+              <th>Head 2</th>
+              <th>Head 3</th>
+              <th>Head 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>col</td>
+              <td>col</td>
+              <td>col</td>
+              <td>col</td>
+            </tr>
+            <tr>
+              <td>col</td>
+              <td>col</td>
+              <td>col</td>
+              <td>col</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   </div>
+   <div class="odc-container odc-medium">
+     <h2>LINEAR LIST</h2>
+     <div class="odc-list_wrapper">
+       <ul id="mylist">
+         <li>List Item 1<ul><li></li></ul></li>
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 2</div></li>
+         <li>List Item 3</li>
+         <li>List Item 4</li>
+         <li>List Item 5</li>
+         <li>List Item 6</li>
+       </ul>
+     </div>
+     <h2>GRID LIST</h2>
+     <div class="odc-list_wrapper">
+       <ul id="mygridlist">
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 1</div></li>
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 2</div></li>
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 3</div></li>
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 4</div></li>
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 5</div></li>
+         <li><div class="odc-list_item-image"><img src="images/card-image.jpg"></div><div class="odc-list_item-content">List Item 6</div></li>
+       </ul>
+     </div>
+   </div>
+
+   <script type="text/javascript" src="js/odc.min.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){
+       //Menu
+       var menu = new odcMenu({
+         type: "horizontal"
+       });
+       menu.init();
+
+       //Toast
+       var toastTL = new odcToast({
+         title: 'Save Money',
+         content: 'Extending by a day could save you $50',
+         position: 'top-left',
+         toastType: 'info'
+       });
+       var toastTR = new odcToast({
+         title: 'All Done!',
+         content: 'See you soon',
+         position: 'top-right',
+         toastType: 'success'
+       });
+       var toastC = new odcToast({
+         title: 'Center',
+         content: 'Toast description',
+         position: 'center'
+       });
+       var toastBL = new odcToast({
+         title: 'Sorry',
+         content: 'You seem to be missing payment information',
+         position: 'bottom-left',
+         toastType: 'danger'
+       });
+       var toastBR = new odcToast({
+         title: 'Ambigous dates',
+         content: 'Not specifying dates will default to today',
+         position: 'bottom-right',
+         toastType: 'warning'
+       });
+       $('#topleftToast').click(function(){toastTL.open()});
+       $('#toprightToast').click(function(){toastTR.open()});
+       $('#centerToast').click(function(){toastC.open()});
+       $('#bottomleftToast').click(function(){toastBL.open()});
+       $('#bottomrightToast').click(function(){toastBR.open()});
+
+       //List
+       var list = new odcList({
+         id : 'mylist',
+         className: '',
+         source: '',
+         listItems: '',
+         sort: 'true',
+         search: 'true',
+         export: 'csv',
+         pagination: '',
+         reorder: 'true'
+       });
+
+       var gridlist = new odcList({
+         id : 'mygridlist',
+         className: '',
+         source: '',
+         listItems: '',
+         sort: 'true',
+         search: 'false',
+         export: 'csv',
+         pagination: '',
+         reorder: 'true',
+         grid: '3'
+       });
+
+     });
+
+
+   </script>
+  </body>
+</html>

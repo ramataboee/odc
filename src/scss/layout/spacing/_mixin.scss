@@ -1,0 +1,32 @@
+/*
+ * reference: https://codepen.io/ezos86/pen/QwQmZb
+ */
+@import './functions';
+
+@mixin odc-mx-space($type:margin, $direction:all, $amount:1){
+	@if $type == padding {
+		@if $direction == all{
+			padding: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else if $direction == top {
+			padding-top: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else if $direction == left {
+			padding-left: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else if $direction == right {
+			padding-right: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else {
+			padding-bottom: odc-fn-space-size($amount)+$odc-space-unit;
+		}
+	} @else if $type == margin {
+		@if $direction == all{
+			margin: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else if $direction == top {
+			margin-top: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else if $direction == left {
+			margin-left: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else if $direction == right {
+			margin-right: odc-fn-space-size($amount)+$odc-space-unit;
+		} @else {
+			margin-bottom: odc-fn-space-size($amount)+$odc-space-unit;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+@import 'mixin';
+
+.odc-table_wrapper{
+  @include odc-mx-create-table();
+}

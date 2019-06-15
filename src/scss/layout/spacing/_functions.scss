@@ -1,0 +1,11 @@
+//space-size is 1-10. beyond 10 wi throw an error
+@function odc-fn-space-size($space-size){
+  @if $space-size < 1 {
+      @return 0;
+  } @else if $space-size > 10 {
+      @warn "Invalid space size `#{$space-size}` for mixin function `odc-fn-space-size`.";
+  } @else {
+      @return (nth($odc-fibonacci-sequence, $space-size)*$odc-space-multiplier);
+  }
+
+}

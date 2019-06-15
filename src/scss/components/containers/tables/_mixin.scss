@@ -1,0 +1,27 @@
+@mixin odc-mx-create-table(){
+  @include box-shadow(1);
+  //@include odc-card;
+  //padding:5px;
+ .odc-table{
+   width: 100%;
+   background-color: #fff;
+   //border: 1px solid #ccc;
+   padding: 5px;
+   box-sizing: border-box;
+   border-collapse: collapse;
+
+   border-radius: 2px;
+   thead{
+     th{
+       border-bottom: 2px solid #000;
+       padding: 2%;
+     }
+   }
+   tbody{
+     td{
+       padding: 2%;
+       border-bottom: 1px solid #f0f0f0;
+     }
+   }
+ }
+}

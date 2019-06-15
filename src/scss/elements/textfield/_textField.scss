@@ -1,0 +1,102 @@
+@import 'mixin';
+/**
+ * Floating label input text field
+ * Name space:  odc-floating-labels
+ * Required: div container, label and input
+ * HTML :
+ *       <div class="odc-floating-labels_wrapper">
+ *          <input id="name" name="name" type="text" class="odc-floating-labels_input" required>
+ *          <label for="name" class="odc-floating-labels_label">Your Name</label>
+ *       </div>
+ **/
+
+ .odc-floating-labels_wrapper{
+   position: relative;
+   border: 1px solid #ccc;
+   padding: 20px 5px 5px;
+   border-radius: 3px;
+   margin: 5%;
+   @include box-shadow(0);
+
+   .odc-floating-labels_label{
+     position: absolute;
+     left: 5px;
+     top: 15px;
+     color: #ccc;
+     @include font-rhythm(14,$ns-body-text);
+     transition: 0.2s ease all;
+     -moz-transition: 0.2s ease all;
+     -webkit-transition: 0.2s ease all;
+   }
+
+   .odc-floating-labels_input{
+     //padding-left: 10px;
+     width: 100%;
+      border: none;
+      outline: none;
+      @include font-rhythm(16,$ns-body-text);
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+   }
+ }
+
+ .odc-floating-labels_input:focus ~ label, .odc-floating-labels_input:valid ~ label{
+   top: 0px;
+   @include font-rhythm(12,$ns-body-heading);
+   color: #009688;
+ }
+ .odc-floating-labels_wrapper ~ .odc-floating-labels_input{
+     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+     padding: 3px 0px 3px 3px;
+     margin: 5px 1px 3px 0px;
+     border: 1px solid rgba(81, 203, 238, 1);
+ }
+
+ /**
+  * Text field helper
+  **/
+  .odc-text-field-helper{
+    position:absolute;
+    display: none;
+    @include font-rhythm(10,$ns-body-text);
+    color: #069bf3;
+    right: 0;
+    top: 50px;
+  }
+/**
+ * Show helper on field hover
+ **/
+.odc-floating-labels_wrapper:hover .odc-text-field-helper{
+  display:block;
+}
+
+/**
+ * Auto complete
+ **/
+.ac_results{
+  overflow: hidden;
+  z-index: 10;
+    //@extend %select-list;
+}
+
+
+// New Stuff
+.l5.odc-text-input{
+  @include odc-mx-text-input($effect: 22, $shape: 22px);
+}
+.odc-text-input{
+  @include odc-mx-text-input($effect: 22, $shape: 3px);
+}
+.odc-text-input{
+  @include odc-mx-text-input($effect: 24);
+}
+
+.odc-text-input{
+  @include odc-mx-text-input($effect: 16, $color-active: $cerulean);
+}
+
+.odc-text-input{
+  @include odc-mx-text-input($effect: 20, $color-active: $cerulean);
+}

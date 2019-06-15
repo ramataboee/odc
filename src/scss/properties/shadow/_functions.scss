@@ -1,0 +1,31 @@
+/**
+ * Computes a bottom-shadow for a card effect.
+ *
+ * @dependency - sass-math-pow (https://www.npmjs.com/package/sass-math-pow)
+ * @param {Number} $depth - depth level
+ * @formula: The general formula for the frequency f_i of the i-th note of any scale is:
+ *
+ *              f_i = f_0 * r^(i/n)
+ *
+ *              Where: fundamental frequency, f_0
+ *                     the number of notes n in an interval,
+ *                     the ratio r of the scale  = golden ratio (r = phi ~ 1.618034).
+                       the number of notes n = 2
+ * @return {List}
+ *
+ *  (i/n) : 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7
+ *  i = even number
+ *  chosen (i/n) sequence: 1,2,3,4,5,6,7
+ *  result: 1.168, 2.617, 4.236, 6.854, 11.089, 17.942
+ */
+
+
+@function bottom-shadow($depth) {
+  $offset-y: 0;
+  $offset-x: nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * 2.5px;
+  $blur-radius: nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * 4px;
+  $spread-radius: nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * -1.5px;
+  $color: rgba(10, 27, 37, 0.4);
+
+  @return $offset-y $offset-x $blur-radius $spread-radius $color;
+}

@@ -1,0 +1,82 @@
+$odc-toast_type--default:rgb(0,0,0);
+$odc-toast_type--info: rgb(19,104,250);
+$odc-toast_type--success: rgb(5,184,60);
+$odc-toast_type--warning: rgb(246,172,7);
+$odc-toast_type--danger: rgb(237,5,5);
+
+$odc-toast_icon--success: $fa-var-check-circle;
+$odc-toast_icon--info: $fa-var-info-circle;
+$odc-toast_icon--warning: $fa-var-exclamation-circle;
+$odc-toast_icon--danger: $fa-var-minus-circle;
+$odc-toast_icon--default: $fa-var-minus-circle;
+
+@import './mixin';
+//staty on for 5 to 6 seconds
+.odc-toast.default{
+  @include odc-mx-create-toast($type: default,$color:$odc-toast_type--default );
+  @include odc-mx-toast-icon($type: default, $icon:  $odc-toast_icon--default);
+}
+
+.odc-toast.success{
+  @include odc-mx-create-toast($type: success, $color: $odc-toast_type--success);
+  @include odc-mx-toast-icon($type: success, $icon: $odc-toast_icon--success);
+}
+
+.odc-toast.info{
+  @include odc-mx-create-toast($type: info, $color: $odc-toast_type--info);
+  @include odc-mx-toast-icon($type: info, $icon: $odc-toast_icon--info);
+}
+
+.odc-toast.warning{
+  @include odc-mx-create-toast($type: warning, $color: $odc-toast_type--warning);
+  @include odc-mx-toast-icon($type: warning, $icon: $odc-toast_icon--warning);
+}
+
+.odc-toast.danger{
+  @include odc-mx-create-toast($type: danger, $color: $odc-toast_type--danger);
+  @include odc-mx-toast-icon($type: danger, $icon: $odc-toast_icon--danger);
+}
+
+.odc-toast-wrapper{
+  position: fixed;
+  z-index: 9999;
+  margin: 2%;
+  width:auto;
+  pointer-events: none;
+}
+.odc-toast-wrapper.top-left{
+  top: 0;
+  left:0;
+}
+.odc-toast-wrapper.top-center{
+  top:0;
+  left: 50%;
+}
+.odc-toast-wrapper.top-right{
+  top: 0;
+  right:0;
+}
+.odc-toast-wrapper.center-left{
+  top: 50%;
+  left:0;
+}
+.odc-toast-wrapper.center{
+  top: 40%;
+  left: 40%;
+}
+.odc-toast-wrapper.center-right{
+  top: 50%;
+  right:0;
+}
+.odc-toast-wrapper.bottom-left{
+  bottom:0;
+  left:0;
+}
+.odc-toast-wrapper.bottom-center{
+  bottom: 0;
+  left: 50%;
+}
+.odc-toast-wrapper.bottom-right{
+  bottom: 0;
+  right:0;
+}

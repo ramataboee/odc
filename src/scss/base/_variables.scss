@@ -1,0 +1,73 @@
+$odc-prefix: odc !default;
+//usage in class = .#{$odc-prefix}
+
+//base colors
+$base-color: #293840;
+$base-color-background: #f6f6f6;
+$base-color-shadow: rgba(0, 0, 0, 0.1);
+
+//typography
+$base-font-size: 12px;
+$base-font-color:#4c4c4c;
+$base-font-color-inverse:#fff;
+$base-font-family-stack-default: sans-serif, Verdana, Geneva;
+
+
+//header_section
+$header-section-height:40px;
+$base-header-section-height: 105px;
+
+//menu
+$base-menu-border-color:#ddd;
+
+//body
+$base-body-width: 83.3333%;
+$base-body-min-height: 460px;
+$base-card-shadow: 0 29px 26px -26px rgba(67, 67, 67, 0.46); //0 1px 9px 0px rgba(0, 0, 0, 0.17);
+$base-border-radius: 3px;
+
+@mixin border-radius($base-border-radius) {
+ -webkit-border-radius: $base-border-radius;
+ -moz-border-radius: $base-border-radius;
+ -ms-border-radius: $base-border-radius;
+ border-radius: $base-border-radius;
+}
+
+$base-holder-notification-quicklinks-width: 70%; //765px
+
+$base-toggle-container-top: 115px;
+//footer
+$base-footer-content-width: 1052px;
+
+//typography
+$brand-font-stack-headline: 'AudiType-ExtendedBold';
+$brand-font-stack-sub-headings:'AudiType-ExtendedNormal';
+$brand-font-stack-body: 'AudiTypeScreen-Normal';
+$brand-font-stack-body-bold: 'AudiTypeScreen-Bold';
+
+//brand colors
+$brand-color-primary:#bb0a30;
+$brand-color-secondary:#b6b1a9;
+$brand-color-tertiary:#333333;
+$brand-color-quaternary:#808080;
+$brand-color-quinary:#cccccc;
+
+//brand button colors
+$brand-btn-color-bg-primary:linear-gradient(#00b1ed,#2d91d6);
+$brand-btn-class: audi_button-red;
+$brand-btn-shadow: rgba(2, 75, 100, 0.45);
+
+//panels
+$brand-panel-header-color: linear-gradient(to left, $base-color, $brand-color-secondary);
+$brand-panel-header-color-font: #fff;
+
+//menu toggle
+$brand-toggle: '/i/templates/Audi_CRM_template/theme_audi/images/menu_open_hr.png';
+$brand-toggle-hov: '/i/templates/Audi_CRM_template/theme_audi/images/menu_open.png';
+$brand-toggle-close: '/i/templates/Audi_CRM_template/theme_audi/images/close.png';
+$brand-toggle-close-hov: '/i/templates/Audi_CRM_template/theme_audi/images/close_hover_volvo1.png';
+$brand-toggle-overlay: '/i/templates/Audi_CRM_template/theme_audi/images/OverlayImg.png';
+
+//advanced search Icon
+$brand-adv-search-minus: '/i/templates/Audi_CRM_template/theme_audi/images/gplus.png';
+$brand-adv-search-plus: '/i/templates/Audi_CRM_template/theme_audi/images/minus_icon.png';

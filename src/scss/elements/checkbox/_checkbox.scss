@@ -1,0 +1,30 @@
+/*
+ * Example Usage:
+  <label for="check1" class="odc-checkbox_container">
+    <input type="checkbox" id="check1" class="odc-checkbox">
+    <div class="odc-checkbox_icon"></div>
+    <div class="odc-checkbox_label">Hello world!</div>
+  </label>
+*/
+
+@import './mixin';
+$odc-checkbox_radius: 3px;
+$odc-checkbox_border: 2px solid $limed-spruce;
+
+.odc-checkbox_container{
+  display: block;
+}
+
+.odc-checkbox_container{
+  @include odc-mx-create-checkbox($tickColor: $cerulean, $size: 16, $shape: rounded, $border: 0,$invert: 0);
+}
+
+.au.odc-checkbox_container{
+  @include odc-mx-create-checkbox($tickColor: $shiraz, $size: 16, $shape: circle, $border: 1,$invert: 0);
+}
+.nilesh.odc-checkbox_container{
+  @include odc-mx-create-checkbox($tickColor: $cod-gray, $size: 16, $shape: rounded, $border: 0,$invert: 1);
+}
+.dft.odc-checkbox_container{
+  @include odc-mx-create-checkbox($tickColor: $shiraz, $size: 16, $shape: 0, $border: 0,$invert: 0);
+}

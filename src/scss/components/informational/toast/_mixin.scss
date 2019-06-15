@@ -1,0 +1,79 @@
+@mixin odc-mx-create-toast($type: default, $color: #000, $animate: fadeInRight){
+  opacity: .9;
+  //padding: 10px;
+    padding: 0px;
+  margin: 10px;
+  overflow:auto;
+  @include border-radius(3px);
+  @include box-shadow(5);
+  animation-name: $animate;
+	animation-duration: 1s;
+	animation-iteration-count:1;
+  //color: desaturate($color, 50%);
+  background-color: #fff;
+
+
+
+  .odc-toast-content_wrapper{
+    display:inline-block;
+    width: 71%;
+    float: right;
+    padding: 10px;
+    border-left: 1px solid #f0f0f0;
+    .odc-toast_title{
+      @include font-rhythm(16,$ns-sub-headline);
+      padding-bottom: 2%;
+      @if $type == "default" {
+        color: $odc-toast_type--default;
+      } @else if $type == "info" {
+        color: $odc-toast_type--info;
+        //color: darken($odc-toast_type--info,70%);
+      } @else if $type == "success" {
+        color: $odc-toast_type--success;
+      } @else if $type == "warning" {
+        color: $odc-toast_type--warning;
+      } @else if $type == "danger" {
+        color: $odc-toast_type--danger;
+      }
+    }
+    .odc-toast-content {
+        color: #666;
+    }
+  }
+}
+
+@mixin odc-mx-toast-icon($type: default, $icon: $fa-info-circle){
+  .odc-toast-icon{
+    @extend %fa-icon;
+    @extend .fas;
+    display: inline-block;
+    width: 10%;
+    //height: 20px;
+    float:left;
+    font-size: 18px;
+    padding:4%;
+    transform: translateY(50%);
+    overflow: auto;
+    color: #fff;
+    @include border-radius(0 3px 3px 0);
+    @include box-shadow(2);
+
+    @if $type == "default" {
+      background-color: $odc-toast_type--default;
+    } @else if $type == "info" {
+      background-color: $odc-toast_type--info;
+      //color: darken($odc-toast_type--info,70%);
+    } @else if $type == "success" {
+      background-color: $odc-toast_type--success;
+    } @else if $type == "warning" {
+      background-color: $odc-toast_type--warning;
+    } @else if $type == "danger" {
+      background-color: $odc-toast_type--danger;
+    }
+
+    &:before {
+      content: fa-content($icon);
+      float: right;
+    }
+  }
+}

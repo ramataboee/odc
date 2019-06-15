@@ -1,0 +1,39 @@
+//@import 'tablets';
+@include media("<=tablet"){
+  .main-container{
+    width: 97%;
+  }
+  .select-style{
+    width: 50px;
+  }
+  .rgn_header{
+    padding: 15px 5px;
+    .title_header{
+      font-size:$base-font-size - 3;
+    }
+  }
+  .dhtmlMenuLG2{
+    .dhtmlMenuItem{
+      font-size:$base-font-size - 3;
+    }
+  }
+  #dashboard_sortable{
+    li{
+      width: 90% !important;
+      margin: 2% 4%;
+    }
+  }
+}
+@include media("<=desktop","landscape"){
+  .main-container{
+    width: 90%;
+  }
+  .select-style{
+    width: 60px;
+  }
+}
+@include media(">1366px"){
+  .main-container{
+    width: 75%;
+  }
+}
