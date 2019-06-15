@@ -1,7 +1,6 @@
-@function gr-two-col-width-1($width){
+@function gr-two-col-width-1($width) {
   @return ($width/1.618);
 }
-
-@function gr-two-col-width-2($width){
+@function gr-two-col-width-2($width) {
   @return ($width - ($width/1.618));
 }

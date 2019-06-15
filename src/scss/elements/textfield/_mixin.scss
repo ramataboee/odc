@@ -1,269 +1,276 @@
-@mixin odc-mx-text-input($effect: 24, $color-active: #4caf50, $shape: 0){
-  margin: 7%;
+@mixin odc-mx-text-input($effect: 24, $color-active: #4caf50, $shape: 0) {
+  margin  : 7%;
   position: relative;
 
-  input{
+  input {
     @include font-rhythm(16,$odc-font-body);
-    color: #333;
-    width: 100%;
+    color     : #333;
+    width     : 100%;
     box-sizing: border-box;
   }
 
-  :focus{
+  :focus {
     outline: none;
   }
- @if $effect == 22{ //can be used with border-radius
-   .effect-22{
-     border: 0;
-     padding: 7px 15px;
-     border: 1px solid #ccc;
-     position: relative;
-     background: transparent;
-     z-index: 1;
-     border-radius: $shape;
+  @if $effect == 22 {
+    //can be used with border-radius
 
-     ~ .focus-bg{
-       position: absolute;
-       left: 0;
-       top: 0;
-       width: 0;
-       height: 100%;
-       background-color: transparent;
-       transition: 0.4s;
-       z-index: 0;
-     }
-     &:focus,
-     &.has-content{
-       ~ .focus-bg{
-         transition: 0.4s;
-         width: 100%;
-         background-color: #ededed;
-         border-radius: $shape;
-       }
-       ~ label{
-         top: -18px;
-         left: 0;
-         font-size: 12px;
-         color: #333;
-         transition: 0.3s;
-       }
-     }
+    .effect-22 {
+      border       : 0;
+      padding      : 7px 15px;
+      border       : 1px solid #ccc;
+      position     : relative;
+      background   : transparent;
+      z-index      : 1;
+      border-radius: $shape;
 
-     ~ label{
-       position: absolute;
-       left: 14px;
-       width: 100%;
-       top: 10px;
-       color: #aaa;
-       transition: 0.3s;
-       z-index: 0;
-       letter-spacing: 0.5px;
-     }
-   }
- }@else if $effect == 24 {
-    .effect-24{
-      border: 0;
-      padding: 7px 15px;
-      border: 1px solid #ccc;
-      position: relative;
-      background: transparent;
-      z-index: 1;
+      ~ .focus-bg {
+        position        : absolute;
+        left            : 0;
+        top             : 0;
+        width           : 0;
+        height          : 100%;
+        background-color: transparent;
+        transition      : 0.4s;
+        z-index         : 0;
+      }
 
-      ~ .focus-bg{
-        &:before,
-        &:after{
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 0;
-          height: 0;
+      &.has-content,
+      &:focus {
+        ~ .focus-bg {
+          transition      : 0.4s;
+          width           : 100%;
           background-color: #ededed;
-          transition: 0.3s;
-          z-index: 0;
-        }
-      }
-
-      &:focus,
-      &.has-content{
-        ~ .focus-bg{
-          &:before{
-            transition: 0.3s;
-            width: 50%;
-            left: 0;
-            top: 0;
-            height: 100%;
-          }
-
-          &:after{
-            transition: 0.3s;
-            width: 50%;
-            height: 100%;
-            bottom: 0;
-            right: 0;
-          }
+          border-radius   : $shape;
         }
 
-        ~ label{
-          top: -18px;
-          left: 0;
-          font-size: 12px;
-          color: #333;
+        ~ label {
+          top       : -18px;
+          left      : 0;
+          font-size : 12px;
+          color     : #333;
           transition: 0.3s;
         }
       }
 
-      ~ .focus-bg{
-        &:after{
-           left: auto;
-           right: 50%;
-           top: auto;
-           bottom: 50%;
-         }
-      }
-
-       ~ label{
-         position: absolute;
-         left: 14px;
-         width: 100%;
-         top: 10px;
-         color: #aaa;
-         transition: 0.3s;
-         z-index: 0;
-         letter-spacing: 0.5px;
-       }
-    }
-  } @else if $effect == 16 {
-    .effect-16{
-      border: 0;
-      padding: 4px 0;
-      border-bottom: 1px solid #ccc;
-      background-color: transparent;
-      z-index: 1;
-
-      ~ .focus-border{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: $color-active;
-        transition: 0.4s;
-      }
-
-      &:focus,
-      &.has-content{
-        ~ .focus-border{
-          width: 100%;
-          transition: 0.4s;
-        }
-        ~ label{
-          top: -16px;
-          font-size: 12px;
-          color: $color-active;
-          transition: 0.3s;
-        }
-      }
-
-      ~ label{
-        position: absolute;
-        left: 0;
-        width: 100%;
-        top: 9px;
-        color: #aaa;
-        transition: 0.3s;
-        z-index:0;
+      ~ label {
+        position      : absolute;
+        left          : 14px;
+        width         : 100%;
+        top           : 10px;
+        color         : #aaa;
+        transition    : 0.3s;
+        z-index       : 0;
         letter-spacing: 0.5px;
       }
     }
-} @else if $effect == 20 {
-  .effect-20{
-    border: 1px solid #ccc;
-    padding: 7px 14px;
-    transition: 0.4s;
-    background: transparent;
-    z-index: 1;
+  } @else 
+  if $effect == 24 {
+    .effect-24 {
+      border    : 0;
+      padding   : 7px 15px;
+      border    : 1px solid #ccc;
+      position  : relative;
+      background: transparent;
+      z-index   : 1;
 
-    ~ .focus-border{
-
-      &:before,
-      &:after{
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-         width: 0;
-         height: 2px;
-         background-color: $color-active;
-         transition: 0.3s;
-      }
-
-      i{
-        &:before,
-        &:after{
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 2px;
-          height: 0;
-          background-color: $color-active;
-          transition: 0.4s;
+      ~ .focus-bg {
+        &:after,
+        &:before {
+          content         : "";
+          position        : absolute;
+          left            : 50%;
+          top             : 50%;
+          width           : 0;
+          height          : 0;
+          background-color: #ededed;
+          transition      : 0.3s;
+          z-index         : 0;
         }
       }
+
+      &.has-content,
+      &:focus {
+        ~ .focus-bg {
+          &:before {
+            transition: 0.3s;
+            width     : 50%;
+            left      : 0;
+            top       : 0;
+            height    : 100%;
+          }
+
+          &:after {
+            transition: 0.3s;
+            width     : 50%;
+            height    : 100%;
+            bottom    : 0;
+            right     : 0;
+          }
+        }
+
+        ~ label {
+          top       : -18px;
+          left      : 0;
+          font-size : 12px;
+          color     : #333;
+          transition: 0.3s;
+        }
+      }
+
+      ~ .focus-bg {
+        &:after {
+          left  : auto;
+          right : 50%;
+          top   : auto;
+          bottom: 50%;
+        }
+      }
+
+      ~ label {
+        position      : absolute;
+        left          : 14px;
+        width         : 100%;
+        top           : 10px;
+        color         : #aaa;
+        transition    : 0.3s;
+        z-index       : 0;
+        letter-spacing: 0.5px;
+      }
     }
+  } @else 
+  if $effect == 16 {
+    .effect-16 {
+      border          : 0;
+      padding         : 4px 0;
+      border-bottom   : 1px solid #ccc;
+      background-color: transparent;
+      z-index         : 1;
 
-     ~ .focus-border:after{
-       top: auto;
-       bottom: 0;
-       left: auto;
-       right: 0;
-     }
+      ~ .focus-border {
+        position        : absolute;
+        bottom          : 0;
+        left            : 0;
+        width           : 0;
+        height          : 2px;
+        background-color: $color-active;
+        transition      : 0.4s;
+      }
 
-     ~ .focus-border i:after{
-       left: auto;
-       right: 0;
-       top: auto;
-       bottom: 0;
-     }
+      &.has-content,
+      &:focus {
+        ~ .focus-border {
+          width     : 100%;
+          transition: 0.4s;
+        }
 
-     &:focus,
-     &.has-content{
-       ~ .focus-border{
+        ~ label {
+          top       : -16px;
+          font-size : 12px;
+          color     : $color-active;
+          transition: 0.3s;
+        }
+      }
 
-         &:before,
-         &:after{
-           width: 100%;
-           transition: 0.3s;
-         }
+      ~ label {
+        position      : absolute;
+        left          : 0;
+        width         : 100%;
+        top           : 9px;
+        color         : #aaa;
+        transition    : 0.3s;
+        z-index       : 0;
+        letter-spacing: 0.5px;
+      }
+    }
+  } @else 
+  if $effect == 20 {
+    .effect-20 {
+      border    : 1px solid #ccc;
+      padding   : 7px 14px;
+      transition: 0.4s;
+      background: transparent;
+      z-index   : 1;
 
-         i{
-           &:before,
-           &:after{
-             height: 100%;
-             transition: 0.4s;
-           }
-         }
-       }
+      ~ .focus-border {
+        &:after,
+        &:before {
+          content         : "";
+          position        : absolute;
+          top             : 0;
+          left            : 0;
+          width           : 0;
+          height          : 2px;
+          background-color: $color-active;
+          transition      : 0.3s;
+        }
 
-       ~ label{
-         top: -18px;
-         left: 0;
-         font-size: 12px;
-         color: $color-active;
-         transition: 0.3s;
-       }
-     }
+        i {
+          &:after,
+          &:before {
+            content         : "";
+            position        : absolute;
+            top             : 0;
+            left            : 0;
+            width           : 2px;
+            height          : 0;
+            background-color: $color-active;
+            transition      : 0.4s;
+          }
+        }
+      }
 
-     ~ label{
-       position: absolute;
-       left: 14px;
-       width: 100%;
-       top: 10px;
-       color: #aaa;
-       transition: 0.3s;
-       z-index: 0;
-       letter-spacing: 0.5px;
-     }
-   }
+      ~ .focus-border:after {
+        top   : auto;
+        bottom: 0;
+        left  : auto;
+        right : 0;
+      }
+
+      ~ .focus-border i:after {
+        left  : auto;
+        right : 0;
+        top   : auto;
+        bottom: 0;
+      }
+
+      &.has-content,
+      &:focus {
+        ~ .focus-border {
+          &:after,
+          &:before {
+            width     : 100%;
+            transition: 0.3s;
+          }
+
+          i {
+            &:after,
+            &:before {
+              height    : 100%;
+              transition: 0.4s;
+            }
+          }
+        }
+
+        ~ label {
+          top       : -18px;
+          left      : 0;
+          font-size : 12px;
+          color     : $color-active;
+          transition: 0.3s;
+        }
+      }
+
+      ~ label {
+        position      : absolute;
+        left          : 14px;
+        width         : 100%;
+        top           : 10px;
+        color         : #aaa;
+        transition    : 0.3s;
+        z-index       : 0;
+        letter-spacing: 0.5px;
+      }
+    }
   }
 }

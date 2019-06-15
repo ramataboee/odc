@@ -1,32 +1,38 @@
 //fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34
 $odc-fibonacci-sequence: 1 2 3 5 8 13 21 34 55;
 $odc-space-multiplier: 2;
-$odc-space-unit:1%;
-$odc-space-xsmall:1;
-$odc-space-small:2;
-$odc-space-medium:3;
-$odc-space-large:4;
-$odc-space-xlarge:5;
+$odc-space-unit: 1%;
+$odc-space-xsmall: 1;
+$odc-space-small: 2;
+$odc-space-medium: 3;
+$odc-space-large: 4;
+$odc-space-xlarge: 5;
 @import 'mixin';
 
-.odc-space{
+.odc-space {
   @include odc-mx-space($type: padding, $direction: all, $amount: $odc-space-xsmall);
 }
-.odc-space_padding-all{
+
+.odc-space_padding-all {
   @include odc-mx-space($type: padding, $direction: all, $amount: 2);
 }
-.odc-space_margin-all--xs{
+
+.odc-space_margin-all--xs {
   @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-xsmall);
 }
-.odc-space_margin-all--s{
+
+.odc-space_margin-all--s {
   @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-small);
 }
-.odc-space_margin-all--m{
+
+.odc-space_margin-all--m {
   @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-medium);
 }
-.odc-space_margin-all--l{
+
+.odc-space_margin-all--l {
   @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-large);
 }
-.odc-space_margin-all--xl{
+
+.odc-space_margin-all--xl {
   @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-xlarge);
 }

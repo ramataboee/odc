@@ -2,8 +2,7 @@
 // reference:   http://gld.chadlindemann.com/
 $phi: 1.618;
 $odc-base: 100%;
-
-$odc-width10: $odc-base/$phi;  //0.618
+$odc-width10: $odc-base/$phi; //0.618
 $odc-width9: $odc-base - $odc-width10; // 0.382
 $odc-width8: $odc-width9/$phi; //0.236
 $odc-width7: $odc-width9 - $odc-width8; //0.146
@@ -13,25 +12,28 @@ $odc-width4: $odc-width5/$phi;
 $odc-width3: $odc-width5 - $odc-width4;
 $odc-width2: $odc-width3/$phi;
 $odc-width1: $odc-width3 - $odc-width2;
-
 $odc-full: $odc-base;
 $odc-large: $odc-width10;
 $odc-medium: $odc-width9;
 $odc-small: $odc-width8;
 $odc-xsmall: $odc-width7;
 
-.odc-full{
+.odc-full {
   width: $odc-full;
 }
- .odc-large{
-   width: $odc-large;
- }
- .odc-medium{
-   width: $odc-medium;
- }
- .odc-small{
-   width: $odc-small;
- }
- .odc-xsmall{
-   width: $odc-xsmall;
- }
+
+.odc-large {
+  width: $odc-large;
+}
+
+.odc-medium {
+  width: $odc-medium;
+}
+
+.odc-small {
+  width: $odc-small;
+}
+
+.odc-xsmall {
+  width: $odc-xsmall;
+}

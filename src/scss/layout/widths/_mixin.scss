@@ -1,4 +1,4 @@
-@mixin odc-mx-golden-rectangle($size){
-  width: ($size * $phi);
+@mixin odc-mx-golden-rectangle($size) {
+  width : ($size * $phi);
   height: $size;
 }

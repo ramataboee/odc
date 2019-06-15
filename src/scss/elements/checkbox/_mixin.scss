@@ -1,60 +1,56 @@
-@mixin odc-mx-create-checkbox($tickColor: #000,$size: 16,$icon: $fa-var-check,$shape: rounded,$border: 1,$invert: 0){
+@mixin odc-mx-create-checkbox($tickColor: #000,$size: 16,$icon: $fa-var-check,$shape: rounded,$border: 1,$invert: 0) {
   cursor: pointer;
-  .odc-checkbox{
+
+  .odc-checkbox {
     display: none;
 
-    + .odc-checkbox_icon{
+    + .odc-checkbox_icon {
       transition: 0.2s ease-in-out;
-      position: relative;
-  		display: inline-block;
-  		top: -1px;
-  		width: #{$size}px;
-  		height: #{$size}px;
-  		margin: 5px;
-      padding: 2px;
-      font-size: #{$size}px;
+      position  : relative;
+      display   : inline-block;
+      top       : -1px;
+      width     : #{$size}px;
+      height    : #{$size}px;
+      margin    : 5px;
+      padding   : 2px;
+      font-size : #{$size}px;
       @extend %fa-icon;
       @extend .fas;
       //@include box-shadow(0);
-
       @if $shape == "rounded" {
         border-radius: $odc-checkbox_radius;
-      } @else if $shape == "circle" {
+      } @else 
+      if $shape == "circle" {
         border-radius: 50%;
       } @else {
         border-radius: 0;
       }
-
       @if $border == 1 {
-         border: $odc-checkbox_border;
+        border: $odc-checkbox_border;
       } @else {
-         border: 0;
-         //background: linear-gradient(rgba(#000,0.07),rgba(#fff,0)),#ddd;
-         box-shadow:
-           0 0.07em 0.1em -0.1em rgba(#000,.4) inset,
-           0 0.05em 0.08em -0.01em rgba(#fff,.7);
-         background-color: lighten($tickColor,50%);
+        border          : 0;
+        //background: linear-gradient(rgba(#000,0.07),rgba(#fff,0)),#ddd;
+        box-shadow      : 0 0.07em 0.1em -0.1em rgba(#000,.4) inset, 0 0.05em 0.08em -0.01em rgba(#fff,.7);
+        background-color: lighten($tickColor,50%);
       }
 
       &:after {
         content: fa-content($icon);
         opacity: 0;
       }
-
     }
 
-    &:checked + .odc-checkbox_icon{
+    &:checked + .odc-checkbox_icon {
       color: $tickColor;
-      &:after{
+
+      &:after {
         opacity: 1;
       }
     }
-
-    @if $invert == 1{
-      &:checked + .odc-checkbox_icon{
-        color: lighten($tickColor,100%);
+    @if $invert == 1 {
+      &:checked + .odc-checkbox_icon {
+        color           : lighten($tickColor,100%);
         background-color: $tickColor;
-
         @if $border == 1 {
           border-color: $tickColor;
         }
@@ -64,25 +60,26 @@
     }
   }
 
-  .odc-checkbox_label{
+  .odc-checkbox_label {
     @include font-rhythm($size,$ns-body-text);
     display: inline-block;
   }
 
-  &:hover{
-    .odc-checkbox_icon{
-      &:after{
-        opacity: .3;
+  &:hover {
+    .odc-checkbox_icon {
+      &:after {
+        opacity: 0.3;
       }
       @include box-shadow(2);
     }
   }
 
-  &:active{
-    .odc-checkbox_icon{
+  &:active {
+    .odc-checkbox_icon {
       @include box-shadow(0);
     }
-    .odc-checkbox_label{
+
+    .odc-checkbox_label {
       color: $tickColor;
     }
   }

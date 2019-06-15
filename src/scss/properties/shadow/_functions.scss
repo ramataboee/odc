@@ -18,14 +18,11 @@
  *  chosen (i/n) sequence: 1,2,3,4,5,6,7
  *  result: 1.168, 2.617, 4.236, 6.854, 11.089, 17.942
  */
-
-
 @function bottom-shadow($depth) {
-  $offset-y: 0;
-  $offset-x: nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * 2.5px;
-  $blur-radius: nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * 4px;
+  $offset-y     : 0;
+  $offset-x     : nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * 2.5px;
+  $blur-radius  : nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * 4px;
   $spread-radius: nth(1.618 2.618 4.236 6.854 11.089 17.942, $depth) * -1.5px;
-  $color: rgba(10, 27, 37, 0.4);
-
+  $color        : rgba(10, 27, 37, 0.4);
   @return $offset-y $offset-x $blur-radius $spread-radius $color;
 }

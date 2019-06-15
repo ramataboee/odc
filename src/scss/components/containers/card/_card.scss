@@ -1,79 +1,92 @@
-  %odc-card{
-    @include box-shadow(1);
-    @include border-radius(3px);
-    @include odc-mx-space($type: padding, $direction: all, $amount: $odc-space-small);
-    @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-small);
-    background-color: #fff;
-    transition: 0.2s  ease-in-out;
-    &:hover{
-      @include box-shadow(3);
-    }
-    .odc-card_image{
-      img{
-        max-width:100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-    }
+%odc-card {
+  @include box-shadow(1);
+  @include border-radius(3px);
+  @include odc-mx-space($type: padding, $direction: all, $amount: $odc-space-small);
+  @include odc-mx-space($type: margin, $direction: all, $amount: $odc-space-small);
+  background-color: #fff;
+  transition      : 0.2s ease-in-out;
+
+  &:hover {
+    @include box-shadow(3);
   }
 
-.odc-card{
+  .odc-card_image {
+    img {
+      max-width : 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.odc-card {
   @extend %odc-card;
 }
 
-.odc-card_edged{
+.odc-card_edged {
   @extend %odc-card;
   padding: 0;
-  .odc-card_image{
-    img{
-        @include border-radius(3px 3px 0px 0px);
+
+  .odc-card_image {
+    img {
+      @include border-radius(3px 3px 0 0);
     }
   }
-  .odc-card_body,.odc-card_foot{
+
+  .odc-card_body,
+  .odc-card_foot {
     @include odc-mx-space($type: padding, $direction: all, $amount: $odc-space-small);
   }
-  .odc-card_foot{
+
+  .odc-card_foot {
     border-top: 1px solid #f0f0f0;
     background: #f7f7f7;
   }
 }
-  .odc-card_head{
 
+.odc-card_head {}
+
+.one {
+  @extend .odc-card;
+  @include box-shadow(1);
+
+  &:hover {
+    @include box-shadow(3);
   }
-  .one{
-     @extend .odc-card;
-     @include box-shadow(1);
-     &:hover{
-       @include box-shadow(3);
-     }
+}
+
+.two {
+  @extend .odc-card;
+  @include box-shadow(2);
+
+  &:hover {
+    @include box-shadow(4);
   }
-  .two{
-     @extend .odc-card;
-     @include box-shadow(2);
-     &:hover{
-       @include box-shadow(4);
-     }
+}
+
+.three {
+  @extend .odc-card;
+  @include box-shadow(3);
+
+  &:hover {
+    @include box-shadow(5);
   }
-  .three{
-     @extend .odc-card;
-     @include box-shadow(3);
-     &:hover{
-       @include box-shadow(5);
-     }
+}
+
+.four {
+  @extend .odc-card;
+  @include box-shadow(4);
+
+  &:hover {
+    @include box-shadow(6);
   }
-  .four{
-     @extend .odc-card;
-     @include box-shadow(4);
-     &:hover{
-       @include box-shadow(6);
-     }
-  }
+}
 //car with image:
-
 //1. image contained
 /*.odc-card_image-contained{
   @extend odc-card;
 }*/
+
 .fill {
   object-fit: fill;
 }

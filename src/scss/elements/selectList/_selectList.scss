@@ -2,12 +2,12 @@
 $odc-select-list_radius: 3px;
 $odc-select-list_border: 2px solid $limed-spruce;
 
-.odc-select-list_container{
+.odc-select-list_container {
   @include odc-mx-select-list($tickColor: #000,$size: 16,$open-icon: $fa-var-chevron-down,$close-icon: $fa-var-chevron-up,$shape: rounded,$border: 1);
 }
-.odc-select-list_container.active{
 
-  &:before{
+.odc-select-list_container.active {
+  &:before {
     content: fa-content($fa-var-chevron-up);
   }
 }

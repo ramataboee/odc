@@ -1,9 +1,9 @@
 @import './functions';
-
 @mixin box-shadow($depth:1) {
   @if $depth < 1 {
     box-shadow: none;
-  } @else if $depth > 6 {
+  } @else 
+  if $depth > 6 {
     @warn "Invalid $depth `#{$depth}` for mixin `card`.";
   } @else {
     box-shadow: bottom-shadow($depth);

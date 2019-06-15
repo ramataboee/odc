@@ -1,16 +1,12 @@
 @import 'functions';
-$ns-base-font-size: 12px !default;
-$ns-base-line-height: gr-line-height($ns-base-font-size);
-
-/**
+$ns-base-font-size  : 12px !default;
+$ns-base-line-height: gr-line-height($ns-base-font-size); /**
  * For fluid typography
  **/
-$ns-min_width: 320px;
-$ns-max_width: 1200px;
-$ns-min_font-size: 12px;
-$ns-max_font-size: 16px;
-
-/**
+$ns-min_width       : 320px;
+$ns-max_width       : 1200px;
+$ns-min_font-size   : 12px;
+$ns-max_font-size   : 16px; /**
  * fonts
  **/
 //$ns-headline: 'AudiType-ExtendedBold';
@@ -18,10 +14,9 @@ $ns-max_font-size: 16px;
 //$ns-body-heading: 'AudiTypeScreen-Bold';
 //$ns-body-text: 'AudiTypeScreen-Normal';
 //$ns-data: 'AudiTypeScreen-Light';
-
-$odc-font-body: 'Roboto', sans-serif;;
-$ns-headline: 'Roboto', sans-serif;;
-$ns-sub-headline: 'Roboto', sans-serif;;
-$ns-body-heading: 'Roboto', sans-serif;;
-$ns-body-text: 'Roboto', sans-serif;;
-$ns-data: 'Roboto', sans-serif;;
+$odc-font-body      : 'Roboto', sans-serif;
+$ns-headline        : 'Roboto', sans-serif;
+$ns-sub-headline    : 'Roboto', sans-serif;
+$ns-body-heading    : 'Roboto', sans-serif;
+$ns-body-text       : 'Roboto', sans-serif;
+$ns-data            : 'Roboto', sans-serif;
