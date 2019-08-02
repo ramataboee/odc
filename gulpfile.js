@@ -2,7 +2,7 @@ var gulp = require( 'gulp' );
 var sass = require( 'gulp-sass' );
 var concat = require( 'gulp-concat' );
 var uglify = require( 'gulp-uglify' );
-var cssnano = require( 'gulp-cssnano' );
+//var cssnano = require( 'gulp-cssnano' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 var browserSync = require( 'browser-sync' );
 
